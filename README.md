@@ -1,14 +1,14 @@
 # React + Redux
 
 This projects main aim and requirements are:
-Create a small React application that allows users to:
-View a list of users
-Click on a user to see their profile
-View that user’s posts
-Edit profile information via a form
-Use routing to navigate between views
-Manage state using Redux
-Use Redux Thunks for async API calls
+A small React application that allows users to:
+- View a list of users
+- Click on a user to see their profile
+- View that user’s posts
+- Edit profile information via a form
+- Use routing to navigate between views
+- Manage state using Redux
+- Use Redux Thunks for async API calls
 
 Prerequisites
 Node.js, npm installed
@@ -16,7 +16,6 @@ create-react-app
 Familiarity with JSONPlaceholder API: https://jsonplaceholder.typicode.com/ or you can use a local API instead
 
 Project Structure
-You may follow this suggested structure:
 /src
   /components
     UserList.js
