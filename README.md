@@ -1,12 +1,71 @@
-# React + Vite
+# React + Redux
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This projects main aim and requirements are:
+Create a small React application that allows users to:
+View a list of users
+Click on a user to see their profile
+View that user’s posts
+Edit profile information via a form
+Use routing to navigate between views
+Manage state using Redux
+Use Redux Thunks for async API calls
 
-Currently, two official plugins are available:
+Prerequisites
+Node.js, npm installed
+create-react-app
+Familiarity with JSONPlaceholder API: https://jsonplaceholder.typicode.com/ or you can use a local API instead
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Project Structure
+You may follow this suggested structure:
+/src
+  /components
+    UserList.js
+    UserCard.js
+    UserProfile.js
+    EditProfileForm.js
+    PostList.js
+  /redux
+    store.js
+    userSlice.js
+    postSlice.js
+  /pages
+    Home.js
+    Profile.js
+  /App.js
+  /index.js
 
-## Expanding the ESLint configuration
+Phase 1: Setup and User List
+Task 1: Project Setup
+Create a new React project using create-react-app.
+Set up folder structure.
+Install react-router-dom, redux, @reduxjs/toolkit, and react-redux.
+Task 2: User List Page
+Fetch a list of users from: https://jsonplaceholder.typicode.com/users or local JSON API.
+Store users in Redux using createSlice and createAsyncThunk.
+Display each user in a card (UserCard.js) with:
+Name
+Email
+A “View Profile” button
+Apply basic CSS.
+Phase 2: Routing and Profile View
+Task 3: Add Routing
+Use react-router-dom to set up:
+/ → UserList
+/users/:id → UserProfile
+Task 4: UserProfile Component
+Use useParams to get user ID.
+Fetch user details (from Redux or directly if not cached).
+Fetch user’s posts (/posts?userId=1) and display in PostList.js.
+Show user’s:
+Name, Email, Website, Company Name
+List of posts with title
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Phase 3: Edit Profile and Form Handling
+Task 5: Edit Profile Form
+Add an "Edit" button on the UserProfile page.
+Clicking "Edit" navigates to /users/:id/edit.
+Prefill a controlled form with user details (name, email).
+Handle form submission with:
+Validation (required fields)
+State update locally (you don’t need to call API for PUT)
+
